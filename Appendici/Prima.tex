@@ -1,0 +1,45 @@
+\chapter{Codice sorgente del modello \textit{DCF}}
+\label{app:listatomatlab}
+Di seguito è incluso il codice sorgente del programma e delle funzioni definite in \textit{MATLAB}.
+Per il calcolo dei \textit{DCF} sono stati scritti più programmi in modo da ridurre il numero di cicli da far eseguire al programma e facilitare il lavoro di \textit{loading} dei dati. 
+In questo senso va letta l'esistenza del primo programma \textit{read\_estate.m}:
+\verbatiminput{Allegati/read_estate.m}
+
+Questo listato ha il solo scopo di indicare a quali righe del file di input corrispondono le variabili \textit{V}, \textit{cf}, \textit{cc}, \textit{ir}. Il valore di '\textit{filename}' viene definito successivamente.
+
+A questa prima componente si aggiunge il programa che calcola effettivamente il \textit{DCF}, denominato \textit{compute\_dcf.m}:
+
+\verbatiminput{Allegati/compute_dcf.m}
+
+I cicli \textit{for} e \textit{if} sono necessari per il calcolo delle sommatorie che costituiscono il \textit{DCF} in caso di \textit{IDR} (vedi \textit{supra} § \ref{subs:idr}). La formula creata per \textit{MATLAB} è lievemente diversa nella scrittura per alleggerire il carico di lavoro per il programma.
+
+Composti questi due elementi, il programma che indica dove leggere i dati e quello che indica come usarli ai fini del calcolo, è stato creato il file principale, \textit{main.m} che definisce '\textit{filename}', cioè il nome del file, la cartella in cui si trova e la sua estensione.
+
+\verbatiminput{Allegati/main.m}
+
+Grazie alla stringa \textit{num2str(i)}, al nome del file, che deve chiamarsi immobile come indicato alla quarta riga del codice, viene aggiunto un numero progressivo, da 1 a \textit{ni}, e subito dopo viene aggiunta l'estensione '\textit{.txt}'. 
+Grazie a questo espediente e ad un ciclo \textit{for} il programma calcola il \textit{DCF} prendendo come input i dati contenuti nei vari file denominati '\textit{immobile1.txt}', \'textit{immobile2.txt}', fino al \textit{ni-esimo} file e leggendo la struttura del file contenuta nel programma \textit{read\_estate.m}.
+Ripetuto \textit{ni} volte il procedimento vengono visualizzati gli \textit{ni} risultati.
+
+Nel funzionamento di questo programma assume una rilevante importanza la struttura del file di input. Oltre alla sintassi del nome del file è essenziale anche la struttura del file di testo contenente i dati che deve essere così composto
+\begin{verbatim}
+'Valore di cessione'
+'Primo CF' 'Secondo CF' '...' 'N-esimo CF'
+'Primo CC' Secondo CC' '...' 'N-esimo CC'
+'Primo IR' Secondo IR' '...' 'N-esimo IR'
+\end{verbatim}
+I valori numerici contenuti fra apici vanno scritti secondo le convenzioni anglosassoni (i decimali vanno separati con il '.') e separati da un solo spazio (non tabulazioni).
+Di seguito si riporta un esempio dei dati, di uno dei venti immobili, utilizzati per lo scenario base descritto al § \ref{subs:risultatiscenbase}.
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}[c]{|*{6}{c}|}
+\hline
+11068750 &  &  &  &  &    \\
+661250 & 661250 & 661250 & ... & 661250 & 661250 \\
+0.0487 & 0.0487 & 0.0487 & ... & 0.0487 & 0.0487 \\
+0.00 & 0.00 & 0.00 & ... & 0.00 & 0.00 \\
+\hline
+\end{tabular}
+\caption{Modello di file nel formato 'immobile(n).txt'}
+\end{center}
+\end{table}

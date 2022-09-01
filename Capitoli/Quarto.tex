@@ -1,0 +1,42 @@
+\chapter{Analisi di scenario multivariata}
+Dopo l'analisi di sensibilità svolta sui singoli fattori che caratterizzano il modello dei {\itshape discounted cash flows} si rende necessaria un'analisi che identifichi le dipendenze fra le diverse variabili in gioco nel principale modello valutativo del settore del {\itshape real estate}. Questa analisi rappresenta quindi una continuazione, su un livello diverso, di quella condotta al capitolo \ref{chap:ansens} e, al contempo, uno strumento veicolare al raggiungimento di un risultato confrontabile e utilizzabile per valutare le disposizioni di {\itshape Solvency II} riguardo al {\itshape property risk}.
+
+\section{L'interdipendenza delle variabili}
+È stato evidenziato nel capitolo precedente che modello dei \textit{DCF} dipende da diverse variabili: la prima categoria raccoglie tutte quelle che influiscono sui livelli degli affitti ({\itshape rent levels}), come il {\itshape vacancy rate}, mentre la seconda comprende le variabili utilizzate per scontare i flussi di cassa.
+Nell'analisi che si intende svolgere in questo capitolo occorre, in prima istanza, analizzare qualitativamente la dipendenza di queste variabili dal mercato {\itshape real estate}, dipendente dalla domanda e dall'offerta di immobili e, ad un livello superiore, da altri mercati e, più in generale, dalla congintura economia.
+In questo senso risulta utile descrivere i fenomeni che possono coinvolgere le variabili descritte.
+
+Il {\itshape vacancy rate}\footnote{Relativamente al mercato di riferimento del campione analizzato in questo lavoro, ovvero gli uffici} dipende dalla quantità di edifici, totali e disponibili, dai livelli occupazionali dei settori coinvolti e dal livello degli affitti. Come già accennato al § \ref{subs:vacancyrate}, il {\itshape vacancy rate} è un indicatore di equilibrio fra domanda e offerta piuttosto che un indicatore di una di queste due misure. Semplificando possiamo dire che è una buona sintesi del rapporto delle misure da cui dipende.
+Risulta quindi ragionevole dire che, in un mercato perfetto, se la domanda di immobili -- uffici in affitto, in questo caso -- aumenta, aumenterà di una certa quantità anche il livelli degli affitti.
+Il driver principale che influenza la domanda di uffici è il livello occupazionale nel settore finanziario, principalmente bancario, assicurativo e immobiliare, e nel settore sei servizi legali e professionali \cite[p. 112]{geltner}: risulta lapalissiano considerare che un maggior numero di lavoratori richiederà un maggiore spazio lavorativo.
+A ciò va aggiunta la correlazione negativa fra il livello degli affitti e il {\itshape vacancy rate}, che in questo scenario diminuirà.  
+Analoghe e opposte considerazioni possono essere svolte considerando aumenti o diminuzioni nel livello dell'offerta degli immobili, che dipende in gran parte dalla quantità di nuove costruzioni e quindi dalle concessioni amministrative\footnote{Occorre quindi verificare eventuali vincoli o concessioni per la costruzione di nuovi edifici.} degli specifici comuni dove gli immobili in analisi si trovano.
+
+In merito al denominatore della formula \ref{for:dcfinter} (p. \pageref{for:dcfinter}), bisogna analizzare principalmente l'{\itshape opportunity cost of capital} in quanto, come si è detto al § \ref{subs:idr}, l'{\itshape interlease discount rate} utilizza l'\textit{OCC} come \textit{floor} del suo valore aggiungendo ad esso una parte di rischiosità relativamente indipendente dall'andamento di mercato.
+In generale il rischio e il rendimento delle attività del {\itshape real estate} sono in tutto simili a titoli di stato a lunga scadenza \cite[p. 136]{geltner} e questo strumento risulta, \textit{in generale}, una buona approssimazione per definire l'\textit{OCC}\footnote{Nell'analisi di uno specifico immobile possono influire sulla stima dell'\textit{OCC} anche altre variabili di carattere più locale rispetto all'oggetto della valutazione.}, in quanto rappresentativo del rendimento ottenibile dall'investimento in un'attività dal rischio analogo.
+L'{\itshape opportunity cost of capital} è quindi positivamente e linearmente correlato all'andamento dei titoli di stato di riferimento, almeno fintanto che questi vengono considerati strumenti {\itshape risk-free}.
+In questo senso, se la congiuntura economica spinge verso un aumento dei rendimenti dei titoli di stato, i tassi del modello dei \textit{DCF}, vale a dire \textit{OCC} e \textit{IDR}, aumentano facendo ridurre, come descritto al § \ref{sub:simvocc}, il valore del \textit{DCF} complessivo.
+%Tabella delle variazioni delle variabili
+\input{Tabelle/Quarto/variazioni}
+Nella tabella \ref{tab:mulvariazioni} sono riassunte le relazioni fin qui descritte, ma occorre ricordare che, a seconda della precisione dell'analisi che si vuole condurre, potrebbero risultare più importanti altre variabili qui non trattate.
+
+\section{Lo scenario di mercato}
+\label{sec:scenmercato}
+Per condurre l'analisi multivariata del modello dei \textit{DCF} occorre definire in prima istanza un modello di riferimento che utilizzi dati il più possibile {\itshape di mercato} per poter confrontare i risultati che si otterranno. Tali dati non possono che provenire dall'osservazione e dai dati che il mercato immobiliare offre e che sono in certi casi sensibilmente distanti da quelli usati nel modello dello scenario base utilizzato per l'analisi di sensitività svolta al capitolo \ref{chap:ansens}.
+Lo scenario di mercato che andiamo a definire è caratterizzato dai seguenti parametri riportati nella tabella \ref{tab:mulmmercato}:
+%Tabella dei parametri di mercato
+\input{Tabelle/Quarto/mmercato}
+
+I valori scelti utilizzati per il modello corrispondono a quelli osservabili sul mercato:
+\begin{itemize}
+\item il {\itshape vacancy rate} utilizzato è il valore rilevato nella città di Milano\footnote{Questo è l'unico dato rilevato per la zona d'interesse della città. Il {\itshape vacancy rate} è infatti fortemente variabile in base alla zona di interesse a seconda della maggiore o minore disponibilità di servizi. Un altro dato disponibile, ma solo parziale, è quello di Roma (8.1\%), ma è inutilizzabile in quanto riferito all'intera città.};
+\item l'{\itshape opportunity cost of capital} è il tasso di rendimento lordo dell'asta dei BTP del 29 dicembre 2011\cite{btp};
+\item l'\textit{IDR} è dato da un aumento di un punto percentuale sulla base dell'\textit{OCC}.
+\end{itemize}
+I risultati ottenuti dal modello a valori di mercato sono riportati nella tabella \ref{tab:amsm} in appendice \ref{app:risultati}.
+
+\section{Analisi multivariata dello scenario di mercato}
+Sulla base dell'attuale situazione di mercato, caratterizzata da una recessione globale accentuata da una crisi sul debito sovrano nell'area euro e da un crescente tasso di disoccupazione a livello nazionale\cite[p. 40]{bollettinoecobdi}, l'analisi multivariata trova il suo naturale punto di partenza sul modello a valori di mercato.
+La magnitudo dell'analisi prevede una variazione congiunta delle variabili compreso fra i 50 e i 250 punti base.
+
+\clearpage
